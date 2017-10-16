@@ -4,8 +4,11 @@ using System.Linq;
 using System.Net.Http;
 using System.Security.Policy;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using HtmlAgilityPack;
+using Timer = System.Timers.Timer;
 
 namespace AdvertWebSites
 {
@@ -29,12 +32,31 @@ namespace AdvertWebSites
             }
         }
 
-        public static void ParseSubCategory(Url siteUrl, Category cat)
+        public static void ParseSubCategory(WebSites site)
         {
             HtmlDocument dc = new HtmlDocument();
-            var res = HttpClient.GetStringAsync(siteUrl.Value + cat).Result;
-            dc.LoadHtml(res);
-            var subCat = dc.DocumentNode.SelectNodes("//nav[contains(@class,'main-CatalogNavigation')]/ul/li/a");
+            foreach (Category cat in site.Categories)
+            {
+                try
+                {
+                    var res = HttpClient.GetStringAsync(site.Url.Value + site.LangRo + cat.Url).Result;
+                    dc.LoadHtml(res);
+                    var subCat = dc.DocumentNode.SelectNodes("//ul/li[contains(@class,'category__subCategories-collection ')]/a");
+                    foreach (var el in subCat)
+                    {
+                        cat.SubCategories.Add(new SubCategory
+                        {
+                            Url = el.Attributes["href"].Value.Substring(3),
+                            Name = el.InnerText
+                        });
+                    }
+                    Thread.Sleep(2000);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
         }
     }
 }

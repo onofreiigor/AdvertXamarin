@@ -12,22 +12,37 @@ namespace AdvertWebSites.Tests
     [TestClass()]
     public class ParserTests
     {
+        public WebSites WebSiteTest = new WebSites()
+        {
+            Name = "test",
+            Url = new Url("https://999.md"),
+            LangRo = "/ro",
+            LangRu = "/ru"
+        };
+
         [TestMethod()]
         public void ParseSiteCategoryTest()
         {
-            WebSites ws = new WebSites()
-            {
-                Name = "test",
-                Url = new Url("https://999.md"),
-                LangRo = "/ro",
-                LangRu = "/ru"
-            };
+            Parser.ParseSiteCategory(WebSiteTest);
 
-            Parser.ParseSiteCategory(ws);
-
-            foreach (var el in ws.Categories)
+            foreach (var el in WebSiteTest.Categories)
             {
                 Console.WriteLine(el.ToString());
+            }
+        }
+
+        [TestMethod()]
+        public void ParseSubCategoryTest()
+        {
+            Parser.ParseSiteCategory(WebSiteTest);
+            Parser.ParseSubCategory(WebSiteTest);
+
+            foreach (Category cat in WebSiteTest.Categories)
+            {
+                foreach (SubCategory subCat in cat.SubCategories)
+                {
+                    Console.WriteLine(subCat);
+                }
             }
         }
     }
