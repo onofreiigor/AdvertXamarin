@@ -1,6 +1,29 @@
 ﻿-- Script Date: 10/16/2017 13:56  - ErikEJ.SqlCeScripting version 3.5.2.72
+
+--drop table AdvertSites;
+
 CREATE TABLE IF NOT EXISTS  [AdvertSites] (
   [Id] INTEGER PRIMARY KEY AUTOINCREMENT
-, [Name] TEXT NOT NULL
-, [Url] TEXT NOT NULL
+, [Name] VARCHAR(200) NOT NULL
+, [Url] VARCHAR(200) NOT NULL
+);
+
+--drop table Category;
+
+CREATE TABLE IF NOT EXISTS  [Category] (
+  [Id] INTEGER PRIMARY KEY AUTOINCREMENT
+, [Url] VARCHAR(100) NOT NULL
+, [SiteUrl] VARCHAR(100) NOT NULL
+, [NameRo] VARCHAR(100) NOT NULL
+, [NameRu] VARCHAR(100) NOT NULL
+);
+
+--drop table SubCategory;
+
+CREATE TABLE IF NOT EXISTS  [SubCategory] (
+  [Id] INTEGER PRIMARY KEY AUTOINCREMENT
+, [Url] VARCHAR(100) NOT NULL
+, [CategoryUrl] VARCHAR(100) NOT NULL
+, [NameRo] VARCHAR(100) NOT NULL
+, [NameRu] VARCHAR(100) NOT NULL
 );

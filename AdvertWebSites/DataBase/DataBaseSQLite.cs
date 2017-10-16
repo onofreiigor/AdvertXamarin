@@ -17,7 +17,7 @@ namespace AdvertWebSites
 
         public static bool InitConnectionSqLite()
         {
-            SQLiteConnection.CreateFile(DBName);
+            //SQLiteConnection.CreateFile(DBName);
             DbConnection = new SQLiteConnection($"Data Source={DBName};Version=3;");
             try
             {
@@ -34,27 +34,56 @@ namespace AdvertWebSites
 
         public static void GenerateCategory(WebSites site)
         {
-
-        }
-
-        public static void SelectCategoryBySite(WebSites site)
-        {
-            string sql = $"select *  from AdvertSites where name = {site.Name}";
-            SqlCommand = new SQLiteCommand(sql, DbConnection);
-            SQLiteDataReader reader = SqlCommand.ExecuteReader();
-            if (reader.Read())
+            foreach (Category cat in site.Categories)
             {
-                foreach (Category cat in site.Categories)
+                string sql =
+                    $"insert into Category (Url, SiteUrl, NameRo) values('{cat.Url}', '{site.Url.Value}', '{cat.Name}')";
+                try
                 {
-                    sql = $"insert into Category where ";
+                    SqlCommand = new SQLiteCommand(sql, DbConnection);
+                    SqlCommand.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
                 }
             }
-            else
+        }
+
+        public static void GenerateSubCategory(Category cat)
+        {
+            
+        }
+
+        public static List<Category> SelectCategoryBySite(WebSites site)
+        {
+            List<Category> res = new List<Category>();
+            string sql = $"select *  from Category where siteurl = {site.Url.Value}";
+            SqlCommand = new SQLiteCommand(sql, DbConnection);
+            SQLiteDataReader reader = SqlCommand.ExecuteReader();
+            while (reader.Read())
             {
-                foreach (Category cat in site.Categories)
+                res.Add(new Category
                 {
-                    
-                }
+                    Name = reader["Name"].ToString(),
+                    Url = reader["Url"].ToString()
+                });
+            }
+
+            return res;
+        }
+
+        public static void DeleteAllFromTableWhereState(string tableName, string whereState)
+        {
+            string sql = $"delete from {tableName} {whereState}";
+            try
+            {
+                SqlCommand = new SQLiteCommand(sql, DbConnection);
+                SqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
     }

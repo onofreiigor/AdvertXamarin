@@ -18,12 +18,16 @@ namespace AdvertWebSites.Tests
             WebSites ws = new WebSites()
             {
                 Name = "test",
-                Url = new Url("https://999.md/ro")
+                Url = new Url("https://999.md"),
+                LangRo = "/ro",
+                LangRu = "/ru"
             };
-            var res = Parser.ParseSiteCategory(ws);
-            foreach (var el in res)
+
+            Parser.ParseSiteCategory(ws);
+
+            foreach (var el in ws.Categories)
             {
-                Console.WriteLine($"Id: {el.Id} \nName: {el.Name}\n");
+                Console.WriteLine(el.ToString());
             }
         }
     }

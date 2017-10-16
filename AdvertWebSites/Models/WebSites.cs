@@ -9,9 +9,10 @@ namespace AdvertWebSites
 {
     public class WebSites
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public Url Url { get; set; }
+        public string LangRo { get; set; }
+        public string LangRu { get; set; }
         public List<Category> Categories { get; set; }
 
         public WebSites()
@@ -23,12 +24,16 @@ namespace AdvertWebSites
         {
             WebSites ws = new WebSites()
             {
-                Id = 1,
                 Name = name,
                 Url = url
             };
 
             return ws;
+        }
+
+        public override string ToString()
+        {
+            return $"Name: {Name}\nUrl: {Url}\nCategory Count: {Categories.Count}\n";
         }
     }
 }

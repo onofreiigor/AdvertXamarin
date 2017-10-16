@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
@@ -12,22 +13,28 @@ namespace AdvertWebSites
     {
         public static HttpClient HttpClient = new HttpClient();
 
-        public static List<Category> ParseSiteCategory(WebSites site)
+        public static void ParseSiteCategory(WebSites site)
         {
             HtmlDocument dc = new HtmlDocument();
-            var res = HttpClient.GetStringAsync(site.Url.Value).Result;
+            var res = HttpClient.GetStringAsync(site.Url.Value + site.LangRo).Result;
             dc.LoadHtml(res);
             var cat = dc.DocumentNode.SelectNodes("//nav[contains(@class,'main-CatalogNavigation')]/ul/li/a");
             foreach (var el in cat)
             {
-                site.Categories.Add(new Category()
+                site.Categories.Add(new Category
                 {
-                    Id = el.Attributes["href"].Value,
+                    Url = el.Attributes["href"].Value.Substring(3),
                     Name = el.InnerText
                 });
             }
+        }
 
-            return site.Categories;
+        public static void ParseSubCategory(Url siteUrl, Category cat)
+        {
+            HtmlDocument dc = new HtmlDocument();
+            var res = HttpClient.GetStringAsync(siteUrl.Value + cat).Result;
+            dc.LoadHtml(res);
+            var subCat = dc.DocumentNode.SelectNodes("//nav[contains(@class,'main-CatalogNavigation')]/ul/li/a");
         }
     }
 }

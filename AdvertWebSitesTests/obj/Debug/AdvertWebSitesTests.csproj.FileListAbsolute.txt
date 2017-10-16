@@ -27,3 +27,32 @@ E:\VS Projects\AdvertWebSites\AdvertWebSitesTests\bin\Debug\EntityFramework.xml
 E:\VS Projects\AdvertWebSites\AdvertWebSitesTests\bin\Debug\EntityFramework.SqlServer.xml
 E:\VS Projects\AdvertWebSites\AdvertWebSitesTests\bin\Debug\System.Data.SQLite.xml
 E:\VS Projects\AdvertWebSites\AdvertWebSitesTests\bin\Debug\System.Data.SQLite.dll.config
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\AdvertWebSitesTests.dll.config
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\AdvertWebSitesTests.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\AdvertWebSitesTests.pdb
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\AdvertWebSites.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\EntityFramework.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\EntityFramework.SqlServer.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\HtmlAgilityPack.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\System.Data.SQLite.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\System.Data.SQLite.EF6.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\System.Data.SQLite.Linq.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\AdvertWebSites.pdb
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\AdvertWebSites.dll.config
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\EntityFramework.xml
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\EntityFramework.SqlServer.xml
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\HtmlAgilityPack.pdb
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\HtmlAgilityPack.xml
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\System.Data.SQLite.xml
+E:\Other\AdvertXamarin\AdvertWebSitesTests\bin\Debug\System.Data.SQLite.dll.config
+E:\Other\AdvertXamarin\AdvertWebSitesTests\obj\Debug\AdvertWebSitesTests.csprojResolveAssemblyReference.cache
+E:\Other\AdvertXamarin\AdvertWebSitesTests\obj\Debug\AdvertWebSitesTests.csproj.CoreCompileInputs.cache
+E:\Other\AdvertXamarin\AdvertWebSitesTests\obj\Debug\AdvertWebSitesTests.dll
+E:\Other\AdvertXamarin\AdvertWebSitesTests\obj\Debug\AdvertWebSitesTests.pdb

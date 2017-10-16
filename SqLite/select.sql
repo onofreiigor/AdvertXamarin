@@ -1,4 +1,1 @@
-﻿select
-*
-from
-advertsites
+﻿select * from category
