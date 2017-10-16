@@ -1,0 +1,1 @@
+﻿insert into advertsites (name, url) values ('Test2', 'Test2') 
