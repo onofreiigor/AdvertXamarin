@@ -15,7 +15,7 @@ namespace AdvertWebSites.Tests
         public WebSites WebSiteTest = new WebSites()
         {
             Name = "test",
-            Url = new Url("https://999.md"),
+            Url = "https://999.md",
             LangRo = "/ro",
             LangRu = "/ru"
         };
@@ -43,6 +43,16 @@ namespace AdvertWebSites.Tests
                 {
                     Console.WriteLine(subCat);
                 }
+            }
+        }
+
+        [TestMethod()]
+        public void SearchOnSiteTest()
+        {
+            var list = Parser.SearchOnSite(WebSiteTest, "adsl");
+            foreach (var el in list)
+            {
+                Console.WriteLine(el);
             }
         }
     }

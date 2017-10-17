@@ -15,7 +15,7 @@ namespace AdvertWebSites.Tests
         [TestMethod()]
         public void AddWebSiteTest()
         {
-            WebSites ws = WebSites.AddWebSite("test", new Url("888.md"));
+            WebSites ws = WebSites.AddWebSite("test", "888.md");
             Assert.IsNotNull(ws);
         }
     }

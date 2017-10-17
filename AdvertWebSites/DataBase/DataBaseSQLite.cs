@@ -14,6 +14,7 @@ namespace AdvertWebSites
         private static string DBName = "AdvertDataBase.sqlite";
         public static SQLiteConnection DbConnection { get; set; }
         private static SQLiteCommand SqlCommand { get; set; }
+        private static SQLiteDataReader SqlReader { get; set; }
 
         public static bool InitConnectionSqLite()
         {
@@ -32,12 +33,48 @@ namespace AdvertWebSites
             }
         }
 
+        public static List<WebSites> GetAllSiteOrByName(string siteName)
+        { 
+            List<WebSites> res = new List<WebSites>();
+            string sql;
+            if (string.IsNullOrEmpty(siteName))
+            {
+                sql = "select * from AdvertSites";
+            }
+            else
+            {
+                sql = $"select * from AdvertSites where name = {siteName}";
+            }
+
+            try
+            {
+                SqlCommand = new SQLiteCommand(sql, DbConnection);
+                SqlReader = SqlCommand.ExecuteReader();
+                while (SqlReader.Read())
+                {
+                    res.Add(new WebSites
+                    {
+                        Name = SqlReader["Name"].ToString(),
+                        Url = SqlReader["Url"].ToString(),
+                        LangRo = SqlReader["UrlRo"].ToString(),
+                        LangRu = SqlReader["UrlRu"].ToString()
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return res;
+        }
+
         public static void GenerateCategory(WebSites site)
         {
             foreach (Category cat in site.Categories)
             {
                 string sql =
-                    $"insert into Category (Url, SiteUrl, NameRo) values('{cat.Url}', '{site.Url.Value}', '{cat.Name}')";
+                    $"insert into Category (Url, SiteUrl, NameRo) values('{cat.Url}', '{site.Url}', '{cat.Name}')";
                 try
                 {
                     SqlCommand = new SQLiteCommand(sql, DbConnection);
@@ -58,7 +95,7 @@ namespace AdvertWebSites
         public static List<Category> SelectCategoryBySite(WebSites site)
         {
             List<Category> res = new List<Category>();
-            string sql = $"select *  from Category where siteurl = {site.Url.Value}";
+            string sql = $"select *  from Category where siteurl = {site.Url}";
             SqlCommand = new SQLiteCommand(sql, DbConnection);
             SQLiteDataReader reader = SqlCommand.ExecuteReader();
             while (reader.Read())

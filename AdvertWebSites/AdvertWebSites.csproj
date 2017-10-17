@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Advert.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="DataBase\DataBaseSQLite.cs" />
     <Compile Include="Parser.cs" />

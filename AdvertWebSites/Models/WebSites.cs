@@ -10,7 +10,7 @@ namespace AdvertWebSites
     public class WebSites
     {
         public string Name { get; set; }
-        public Url Url { get; set; }
+        public string Url { get; set; }
         public string LangRo { get; set; }
         public string LangRu { get; set; }
         public List<Category> Categories { get; set; }
@@ -20,7 +20,7 @@ namespace AdvertWebSites
             Categories = new List<Category>();
         }
 
-        public static WebSites AddWebSite(string name, Url url)
+        public static WebSites AddWebSite(string name, string url)
         {
             WebSites ws = new WebSites()
             {
@@ -33,7 +33,7 @@ namespace AdvertWebSites
 
         public override string ToString()
         {
-            return $"Name: {Name}\nUrl: {Url}\nCategory Count: {Categories.Count}\n";
+            return $"Name: {Name}\nUrl: {Url}\nLangRo: {LangRo}\nLangRu: {LangRu}\n";
         }
     }
 }

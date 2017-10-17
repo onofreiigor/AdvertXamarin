@@ -15,7 +15,7 @@ namespace AdvertWebSites.Tests
         public WebSites WebSiteTest = new WebSites()
         {
             Name = "999.md",
-            Url = new Url("https://999.md"),
+            Url = "https://999.md",
             LangRo = "/ro",
             LangRu = "/ru"
         };
@@ -53,6 +53,17 @@ namespace AdvertWebSites.Tests
         {
             DataBaseSqLite.InitConnectionSqLite();
             DataBaseSqLite.DeleteAllFromTableWhereState("Category", "");
+        }
+
+        [TestMethod()]
+        public void GetAllSiteOrByNameTest()
+        {
+            DataBaseSqLite.InitConnectionSqLite();
+            List<WebSites> res = DataBaseSqLite.GetAllSiteOrByName("");
+            foreach (var el in res)
+            {
+                Console.WriteLine(el);
+            }
         }
     }
 }

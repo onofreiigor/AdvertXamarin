@@ -1,1 +1,2 @@
-﻿insert into advertsites (name, url) values ('Test2', 'Test2') 
+﻿insert into advertsites (name, url, urlro, urlru) values ('999.md', 'https://999.md/', 'https://999.md/ro/', 'https://999.md/ru/');
+insert into advertsites (name, url, urlro, urlru) values ('makler.md', 'https://makler.md/', 'https://makler.md/md/', 'https://makler.md/ru/');
