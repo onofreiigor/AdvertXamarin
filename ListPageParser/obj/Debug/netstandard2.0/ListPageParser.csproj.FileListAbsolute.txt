@@ -1,0 +1,8 @@
+E:\Other\AdvertXamarin\ListPageParser\bin\Debug\netstandard2.0\ListPageParser.deps.json
+E:\Other\AdvertXamarin\ListPageParser\bin\Debug\netstandard2.0\ListPageParser.dll
+E:\Other\AdvertXamarin\ListPageParser\bin\Debug\netstandard2.0\ListPageParser.pdb
+E:\Other\AdvertXamarin\ListPageParser\obj\Debug\netstandard2.0\ListPageParser.csproj.CoreCompileInputs.cache
+E:\Other\AdvertXamarin\ListPageParser\obj\Debug\netstandard2.0\ListPageParser.AssemblyInfoInputs.cache
+E:\Other\AdvertXamarin\ListPageParser\obj\Debug\netstandard2.0\ListPageParser.AssemblyInfo.cs
+E:\Other\AdvertXamarin\ListPageParser\obj\Debug\netstandard2.0\ListPageParser.dll
+E:\Other\AdvertXamarin\ListPageParser\obj\Debug\netstandard2.0\ListPageParser.pdb
